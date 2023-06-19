@@ -99,14 +99,18 @@ Public Class delcheckin
                         reader.Close()
                         Try
                             'insert record
-                            Dim query3 = "INSERT INTO visitor (id, visitortype, unit, vehicleno, company, badge, checkin, remark) VALUES 
-                                        (@id , 'delivery', @unit, @vehicle, @company, @badge, NOW(), @remark)"
+                            Dim query3 = "INSERT INTO visitor (`visitor_id`, `visitortype`, `name`, `contact`, `unit-no`, `host-id`, `vehicleno`, `company`, `visitorqty`,  `badge`, `purpose`, `checkin`, `remark`) VALUES 
+                                        (@id, 'delivery', @company, @contact, @unit, @host, @vehicle, @company, @qty, @badge, @purpose, NOW(), @remark)"
                             Dim command3 As New MySqlCommand(query3, conn)
                             command3.Parameters.Add("@id", MySqlDbType.VarChar).Value = id
-                            command3.Parameters.Add("@vehicle", MySqlDbType.VarChar).Value = txtvehicle.Text
                             command3.Parameters.Add("@company", MySqlDbType.VarChar).Value = cmbcompany.Text
+                            command3.Parameters.Add("@contact", MySqlDbType.VarChar).Value = "00"
                             command3.Parameters.Add("@unit", MySqlDbType.VarChar).Value = unitno
+                            command3.Parameters.Add("@host", MySqlDbType.Int32).Value = 1
+                            command3.Parameters.Add("@vehicle", MySqlDbType.VarChar).Value = txtvehicle.Text
+                            command3.Parameters.Add("@qty", MySqlDbType.Int32).Value = 1
                             command3.Parameters.Add("@badge", MySqlDbType.VarChar).Value = txtbadge.Text
+                            command3.Parameters.Add("@purpose", MySqlDbType.VarChar).Value = "DELIVERY"
                             command3.Parameters.Add("@remark", MySqlDbType.VarChar).Value = txtremark.Text
 
                             reader = command3.ExecuteReader()

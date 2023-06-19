@@ -835,8 +835,8 @@ Public Class setting
         Dim plaintext As String = h1 & "-" & h2
         Dim pass As String = 1111
 
-        Dim wrapper As New encryptdecrypt(pass)
-        Dim ciphertext As String = wrapper.encryptData(plaintext)
+        Dim wrapper As New Simple3Des(pass)
+        Dim ciphertext As String = wrapper.EncryptData(plaintext)
 
         My.Computer.FileSystem.WriteAllText(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\ciphertext.txt", ciphertext, False)
 

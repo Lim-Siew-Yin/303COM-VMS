@@ -10,15 +10,15 @@ Public Class ttlActive
             'get date
             Dim datepicker As Date
 
-            If dashboard.radioToday.Enabled = True Then
-                datepicker = Today.Date
-            ElseIf dashboard.radioDate.Enabled = True Then
-                datepicker = dashboard.datepick
+            If dashboard.radioToday.Checked = True And dashboard.radioDate.Checked = False Then
+                datepicker = Now.Date()
+            ElseIf dashboard.radioDate.Checked = True And dashboard.radioToday.Checked = False Then
+                datepicker = dashboard.dashboarddatepick
             End If
 
             'active visitor
             Dim table As New DataTable()
-            Dim query = "SELECT name AS 'NAME', ic AS 'I/C', passport AS 'PASSPORT', contact AS 'CONTACT', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', checkin AS 'CHECK IN'
+            Dim query = "SELECT `name` AS 'NAME', `ic` AS 'I/C', `passport` AS 'PASSPORT', `contact` AS 'CONTACT', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` AS 'HOST', `checkin` AS 'CHECK IN'
               FROM `visitor` 
               WHERE `checkin` >= @datepicked
               AND `checkin` < @datepicked + INTERVAL 1 DAY
@@ -28,7 +28,6 @@ Public Class ttlActive
             Dim command As New MySqlCommand(query, conn)
             command.Parameters.Add("@datepicked", MySqlDbType.Date).Value = datepicker
             Dim adapter As New MySqlDataAdapter(command)
-
 
             adapter.Fill(table)
             tblreport.DataSource = table

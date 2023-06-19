@@ -114,7 +114,7 @@ Partial Class visitordetail
         Me.Panel1.Location = New System.Drawing.Point(629, 48)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1204, 1008)
+        Me.Panel1.Size = New System.Drawing.Size(1217, 956)
         Me.Panel1.TabIndex = 7
         '
         'btnclear
@@ -195,10 +195,11 @@ Partial Class visitordetail
         'imgCaptured
         '
         Me.imgCaptured.BackColor = System.Drawing.SystemColors.Control
+        Me.imgCaptured.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.imgCaptured.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.imgCaptured.Location = New System.Drawing.Point(590, 92)
         Me.imgCaptured.Name = "imgCaptured"
-        Me.imgCaptured.Size = New System.Drawing.Size(538, 278)
+        Me.imgCaptured.Size = New System.Drawing.Size(552, 272)
         Me.imgCaptured.TabIndex = 30
         Me.imgCaptured.TabStop = False
         '
@@ -211,7 +212,7 @@ Partial Class visitordetail
         Me.tblhistory.Name = "tblhistory"
         Me.tblhistory.RowHeadersWidth = 51
         Me.tblhistory.RowTemplate.Height = 24
-        Me.tblhistory.Size = New System.Drawing.Size(538, 351)
+        Me.tblhistory.Size = New System.Drawing.Size(552, 351)
         Me.tblhistory.TabIndex = 29
         '
         'txtVisitorQty
@@ -584,7 +585,7 @@ Partial Class visitordetail
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(1900, 1107)
+        Me.ClientSize = New System.Drawing.Size(1900, 1055)
         Me.Controls.Add(Me.lblblacklist)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)

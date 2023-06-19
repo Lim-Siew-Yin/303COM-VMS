@@ -28,12 +28,18 @@ Public Class checkout
                 Dim fullic As String = txtic.Text
                 fullic = fullic.Replace("-", "")    'remove -
 
+                'get last 4 digit
+                Dim ic = Microsoft.VisualBasic.Right(fullic, 4)
+
+                'encrypt ic 
+                Dim encryptIC As String = strEncrypt(fullic, ic)
+
                 'check record
                 Dim query1 = "SELECT * FROM `visitor` WHERE `ic` = @ic
                             AND `checkin` >= CURDATE()
                             AND `checkin` < CURDATE() + INTERVAL 1 DAY "
                 Dim command1 As New MySqlCommand(query1, conn)
-                command1.Parameters.Add("@ic", MySqlDbType.VarChar).Value = fullic
+                command1.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
                 reader = command1.ExecuteReader()
                 Dim count As Integer = 0
 
@@ -51,7 +57,7 @@ Public Class checkout
                         AND `checkin` >= CURDATE()
                         AND `checkin` < CURDATE() + INTERVAL 1 DAY "
                         Dim command2 As New MySqlCommand(query2, conn)
-                        command2.Parameters.Add("@ic", MySqlDbType.VarChar).Value = fullic
+                        command2.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
                         reader = command2.ExecuteReader()
 
                         sesic = txtic.Text
@@ -82,12 +88,18 @@ Public Class checkout
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
+                'get last 4 digit
+                Dim pass = Microsoft.VisualBasic.Right(txtpass.Text, 4)
+
+                'encrypt pass 
+                Dim encryptPassport As String = strEncrypt(txtpass.Text, pass)
+
                 'check record
                 Dim query3 = "SELECT * FROM `visitor` WHERE `passport`= @passport
                             AND `checkin` >= CURDATE()
                             AND `checkin` < CURDATE() + INTERVAL 1 DAY "
                 Dim command3 As New MySqlCommand(query3, conn)
-                command3.Parameters.Add("@passport", MySqlDbType.VarChar).Value = txtpass.Text
+                command3.Parameters.Add("@passport", MySqlDbType.VarChar).Value = encryptPassport
                 reader = command3.ExecuteReader()
                 Dim count As Integer
                 count = 0

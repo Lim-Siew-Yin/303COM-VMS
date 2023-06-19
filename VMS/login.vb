@@ -17,8 +17,10 @@ Public Class login
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
-                Dim query1 = "SELECT * FROM user WHERE username = '" & txtusername.Text & "' AND password = '" & txtpass.Text & "'"
+                Dim query1 = "SELECT * FROM user WHERE username = @username AND password = @password"
                 Dim command1 As New MySqlCommand(query1, conn)
+                command1.Parameters.Add("@username", MySqlDbType.VarChar).Value = txtusername.Text
+                command1.Parameters.Add("@password", MySqlDbType.VarChar).Value = txtpass.Text
                 reader = command1.ExecuteReader()
                 Dim count As Integer
                 count = 0
@@ -56,7 +58,7 @@ Public Class login
                     Me.Hide()
 
                 ElseIf count > 1 Then
-                    MsgBox("user duplicate")
+                    MsgBox("User Duplicated")
                 Else
                     MsgBox("Invalid username or password")
                 End If

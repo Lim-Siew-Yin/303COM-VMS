@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class dashboard
     Dim reader As MySqlDataReader
-    Public datepick As Date
+    Public dashboarddatepick As Date
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         radioToday.Checked = True
         radioDate.Checked = False
@@ -16,7 +16,7 @@ Public Class dashboard
             If radioToday.Checked = True Then
 
                 'total visitor
-                Dim query1 = "SELECT COUNT(`id`) AS 'tvisitor'
+                Dim query1 = "SELECT COUNT(`visitor_id`) AS 'tvisitor'
                   FROM `visitor` 
                   WHERE `checkin` >= CURDATE()
                   AND `checkin` < CURDATE() + INTERVAL 1 DAY "
@@ -24,7 +24,7 @@ Public Class dashboard
                 lblvisitor.Text = command1.ExecuteScalar().ToString()
 
                 'active visitor
-                Dim query2 = "SELECT COUNT(`id`) AS 'tactive'
+                Dim query2 = "SELECT COUNT(`visitor_id`) AS 'tactive'
                   FROM `visitor` 
                   WHERE `checkin` >= CURDATE()
                   AND `checkin` < CURDATE() + INTERVAL 1 DAY 
@@ -33,7 +33,7 @@ Public Class dashboard
                 lblactive.Text = command2.ExecuteScalar().ToString()
 
                 'checked out visitor
-                Dim query3 = "SELECT COUNT(`id`) AS 'tcheckout'
+                Dim query3 = "SELECT COUNT(`visitor_id`) AS 'tcheckout'
                   FROM `visitor` 
                   WHERE `checkin` >= CURDATE()
                   AND `checkin` < CURDATE() + INTERVAL 1 DAY 
@@ -108,9 +108,9 @@ Public Class dashboard
 
     Private Sub dateDashboard_ValueChanged(sender As Object, e As EventArgs) Handles dateDashboard.ValueChanged
 
-        datepick = dateDashboard.Value.Date
+        dashboarddatepick = dateDashboard.Value.Date()
 
-        loadVisitor(datepick)
+        loadVisitor(dashboarddatepick)
 
     End Sub
 
@@ -122,10 +122,10 @@ Public Class dashboard
                 MsgBox("FAILED TO CONNECT TO DATABASE")
             End If
 
-            MsgBox(datepicked)
+            'MsgBox(datepicked)
 
             'total visitor
-            Dim query1 = "SELECT COUNT(`id`) AS 'tvisitor'
+            Dim query1 = "SELECT COUNT(`visitor_id`) AS 'tvisitor'
                       FROM `visitor` 
                       WHERE `checkin` >= @datepicked
                       AND `checkin` < @datepicked + INTERVAL 1 DAY"
@@ -134,7 +134,7 @@ Public Class dashboard
             lblvisitor.Text = command1.ExecuteScalar().ToString()
 
             'active visitor
-            Dim query2 = "SELECT COUNT(`id`) AS 'tactive'
+            Dim query2 = "SELECT COUNT(`visitor_id`) AS 'tactive'
                       FROM `visitor` 
                       WHERE `checkin` >= @datepicked
                       AND `checkin` < @datepicked + INTERVAL 1 DAY 
@@ -144,7 +144,7 @@ Public Class dashboard
             lblactive.Text = command2.ExecuteScalar().ToString()
 
             'checked out visitor
-            Dim query3 = "SELECT COUNT(`id`) AS 'tcheckout'
+            Dim query3 = "SELECT COUNT(`visitor_id`) AS 'tcheckout'
                       FROM `visitor` 
                       WHERE `checkin` >= @datepicked
                       AND `checkin` < @datepicked + INTERVAL 1 DAY 

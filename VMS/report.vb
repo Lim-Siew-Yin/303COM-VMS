@@ -10,8 +10,8 @@ Public Class report
         cmbunit.Text = ""
 
         If role = "tenant" Then
-            'cmbunit.SelectedIndex = 1
-            'cmbunit.Text = tenantname
+            cmbunit.SelectedIndex = 1
+            cmbunit.Text = tenantname
             unitno = tenantname
             lblunit.Text = unitno
             cmbunit.Enabled = False
@@ -71,12 +71,14 @@ Public Class report
     'End Sub
 
     Private Sub txtdate1_ValueChanged(sender As Object, e As EventArgs) Handles txtdate1.ValueChanged
+        'formatting datepicker1
         If txtdate1.Format = DateTimePickerFormat.Custom AndAlso txtdate1.CustomFormat = " " Then
             txtdate1.Format = DateTimePickerFormat.Short
         End If
     End Sub
 
     Private Sub txtdate2_ValueChanged(sender As Object, e As EventArgs) Handles txtdate2.ValueChanged
+        'formatting datepicker2
         If txtdate2.Format = DateTimePickerFormat.Custom AndAlso txtdate2.CustomFormat = " " Then
             txtdate2.Format = DateTimePickerFormat.Short
         End If
@@ -129,6 +131,7 @@ Public Class report
     End Sub
 
     Private Sub cmbunit_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbunit.SelectedIndexChanged
+        'formatting unit no
         If cmbunit.SelectedIndex > 0 Then
             Dim unitori = cmbunit.Text
             unitno = unitori.Substring(0, unitori.IndexOf("|"))
@@ -151,7 +154,16 @@ Public Class report
             Dim fullic As String = txtic.Text
             fullic = fullic.Replace("-", "")    'remove -
 
-            Dim visitorAttribute As String = "`id` AS 'ID', `visitortype` AS 'VISITOR TYPE', `name` AS 'NAME', `ic` AS 'I/C', `passport` AS 'PASSPORT', `contact` AS 'CONTACT NO.', `email` AS 'EMAIL', `unit` AS 'UNIT', `host` AS 'HOST', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO.', `badge` AS 'BADGE NO.', `purpose` AS 'VISIT PURPOSE', `checkin` AS 'CHECK IN', `checkout` AS 'CHECK OUT', `forcecheckout` AS 'FORCE CHECK OUT', `forcereason` AS 'FORCE CHECK OUT REASON', `remark` AS 'REMARK'"
+            'get last 4 digit
+            Dim ic, pass As String
+            ic = Microsoft.VisualBasic.Right(fullic, 4)
+            pass = Microsoft.VisualBasic.Right(txtpass.Text, 4)
+
+            'encrypt ic (*will still encrypt empty field)
+            Dim encryptIC As String = strEncrypt(fullic, ic)
+            Dim encryptPassport As String = strEncrypt(txtpass.Text, pass)
+
+            Dim visitorAttribute As String = "`visitor_id` AS 'ID', `visitortype` AS 'VISITOR TYPE', `name` AS 'NAME', `ic` AS 'I/C', `passport` AS 'PASSPORT', `contact` AS 'CONTACT NO.', `email` AS 'EMAIL', `unit` AS 'UNIT', `host` AS 'HOST', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO.', `badge` AS 'BADGE NO.', `purpose` AS 'VISIT PURPOSE', `checkin` AS 'CHECK IN', `checkout` AS 'CHECK OUT', `forcecheckout` AS 'FORCE CHECK OUT', `forcereason` AS 'FORCE CHECK OUT REASON', `remark` AS 'REMARK'"
 
             Dim blacklistAttribute As String = "`blacklist`.`requestDate` AS 'BLACKLIST REQUEST DATE', `blacklist`.`requestReason` AS 'BLACKLIST REASON', `blacklist`.`approved` AS 'BLACKLIST APPROVAL', `blacklist`.`approvedBy` AS ' BLACKLIST APPROVED BY', `blacklist`.`approvalDate` AS 'BLACKLIST APPROVAL DATE', `visitor`.`visitortype` AS 'VISITOR TYPE', `visitor`.`name` AS 'NAME', `visitor`.`ic` AS 'I/C', `visitor`.`passport` AS 'PASSPORT', `visitor`.`contact` AS 'CONTACT NO.', `visitor`.`email` AS 'EMAIL', `visitor`.`unit` AS 'UNIT', `visitor`.`host` AS 'HOST', `visitor`.`company` AS 'COMPANY', `visitor`.`vehicleno` AS 'VEHICLE NO.', `visitor`.`badge` AS 'BADGE NO.', `visitor`.`purpose` AS 'VISIT PURPOSE', `visitor`.`checkin` AS 'CHECK IN', `visitor`.`checkout` AS 'CHECK OUT', `visitor`.`forcecheckout` AS 'FORCE CHECK OUT', `visitor`.`forcereason` AS 'FORCE CHECK OUT REASON', `visitor`.`remark` AS 'REMARK'"
 
@@ -175,7 +187,7 @@ Public Class report
                          FROM `visitor` 
                          WHERE `checkin` >= @date1
                          AND `checkin` <= @date2 + INTERVAL 1 DAY
-                         AND `unit` = @unit
+                         AND `unit-no` = @unit
                          ORDER BY `name` "
                 End If
 
@@ -198,7 +210,7 @@ Public Class report
                          WHERE `ic` = @ic
                          AND `checkin` >= @date1
                          AND `checkin` <= @date2 + INTERVAL 1 DAY
-                         AND `unit` = @unit
+                         AND `unit-no` = @unit
                          ORDER BY `checkin` DESC"
                 End If
 
@@ -221,7 +233,7 @@ Public Class report
                          WHERE `passport` = @passport
                          AND `checkin` >= @date1
                          AND `checkin` <= @date2 + INTERVAL 1 DAY
-                         AND `unit` = @unit
+                         AND `unit-no` = @unit
                          ORDER BY `checkin` DESC"
                 End If
 
@@ -250,7 +262,7 @@ Public Class report
                             query = "SELECT " + visitorAttribute + "
                                 FROM `visitor` 
                                 WHERE `forcecheckout` = 0
-                                AND `unit` = @unit
+                                AND `unit-no` = @unit
                                 AND `checkin` >= @date1
                                 AND `checkin` <= @date2 + INTERVAL 1 DAY
                                 ORDER BY `checkin` DESC"
@@ -273,7 +285,7 @@ Public Class report
                                 FROM `visitor` 
                                 WHERE `visitortype` = @type 
                                 AND `forcecheckout` = 0
-                                AND `unit` = @unit
+                                AND `unit-no` = @unit
                                 AND `checkin` >= @date1
                                 AND `checkin` <= @date2 + INTERVAL 1 DAY
                                 ORDER BY `checkin` DESC"
@@ -285,7 +297,7 @@ Public Class report
                             'all unit
                             query = "SELECT " + blacklistAttribute + "
                                 FROM `blacklist` INNER JOIN `visitor` 
-                                ON `blacklist`.`visitor-id` = `visitor`.`id` 
+                                ON `blacklist`.`visitor-id` = `visitor`.`visitor_id` 
                                 AND `requestDate` >= @date1
                                 AND `requestDate` <= @date2 + INTERVAL 1 DAY
                                 ORDER BY `checkin` DESC"
@@ -294,8 +306,8 @@ Public Class report
                             'specific unit
                             query = "SELECT " + blacklistAttribute + "
                                 FROM `blacklist` INNER JOIN `visitor` 
-                                ON `blacklist`.`visitor-id` = `visitor`.`id`
-                                WHERE `visitor`.`unit` = @unit
+                                ON `blacklist`.`visitor-id` = `visitor`.`visitor_id`
+                                WHERE `visitor`.`unit-no` = @unit
                                 AND `requestDate` >= @date1
                                 AND `requestDate` <= @date2 + INTERVAL 1 DAY
                                 ORDER BY `checkin` DESC"
@@ -318,7 +330,7 @@ Public Class report
                                 FROM `visitor` 
                                 WHERE `visitortype` = @type 
                                 AND `forcecheckout` = 0
-                                AND `unit` = @unit
+                                AND `unit-no` = @unit
                                 AND `checkin` >= @date1
                                 AND `checkin` <= @date2 + INTERVAL 1 DAY
                                 ORDER BY `checkin` DESC"
@@ -338,7 +350,7 @@ Public Class report
                         query = "SELECT " + visitorAttribute + "
                              FROM `visitor` 
                              WHERE `forcecheckout` = 1
-                             AND `unit` = @unit
+                             AND `unit-no` = @unit
                              AND `checkin` >= @date1
                              AND `checkin` <= @date2 + INTERVAL 1 DAY
                              ORDER BY `name` "
@@ -357,8 +369,8 @@ Public Class report
                 Dim command As New MySqlCommand(query, conn)
                 command.Parameters.Add("@date1", MySqlDbType.Date).Value = txtdate1.Value
                 command.Parameters.Add("@date2", MySqlDbType.Date).Value = txtdate2.Value
-                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = fullic
-                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = txtpass.Text
+                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
+                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = encryptPassport
                 command.Parameters.Add("@type", MySqlDbType.VarChar).Value = vtype
                 command.Parameters.Add("@force", MySqlDbType.VarChar).Value = force
                 command.Parameters.Add("@unit", MySqlDbType.VarChar).Value = lblunit.Text
@@ -368,7 +380,7 @@ Public Class report
 
                 reader = command.ExecuteReader
                 If reader.HasRows Then
-
+                    'display on table if has record
                     reader.Close()
                     adapter.Fill(table)
                     tblreport.DataSource = table
@@ -404,11 +416,6 @@ Public Class report
 
             For Each column As DataGridViewColumn In tblreport.Columns
                 For Each item In listfilter.CheckedItems
-
-                    'Dim cleanitem As String = Regex.Replace(item, "[^A-Za-z0-9]", "")
-
-
-                    'MsgBox(cleanitem.ToUpper + " , " + column.HeaderText.ToUpper)
 
                     If column.HeaderText.ToUpper = item.ToUpper Then
 

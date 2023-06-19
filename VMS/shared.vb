@@ -23,6 +23,7 @@ Module formexit
     Public userid, tenantname, role As String   'for access level control
     Public arrImage() As Byte = {}      'saving image
 
+
     'check blacklist
     Public Function checkblacklist(ic As String)
         If Not opendb() Then

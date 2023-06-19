@@ -10,16 +10,16 @@ Public Class ttlVisitor
             'get date
             Dim datepicker As Date
 
-            If dashboard.radioToday.Enabled = True And dashboard.radioDate.Enabled = False Then
-                datepicker = Today.Date
-            ElseIf dashboard.radioDate.Enabled = True And dashboard.radioToday.Enabled = False Then
-                datepicker = dashboard.datepick
+            If dashboard.radioToday.Checked = True And dashboard.radioDate.Checked = False Then
+                datepicker = Now.Date()
+            ElseIf dashboard.radioDate.Checked = True And dashboard.radioToday.Checked = False Then
+                datepicker = dashboard.dashboarddatepick
             End If
 
-            MsgBox(datepicker)
+            'MsgBox(datepicker)
             'total visitor
             Dim table As New DataTable()
-            Dim query = "SELECT name AS 'NAME', ic AS 'I/C', passport AS 'PASSPORT', contact AS 'CONTACT', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', checkin AS 'CHECK IN', checkout AS 'CHECK OUT'
+            Dim query = "SELECT `name` AS 'NAME', `ic` AS 'I/C', `passport` AS 'PASSPORT', `contact` AS 'CONTACT', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` AS 'HOST', `checkin` AS 'CHECK IN', `checkout` AS 'CHECK OUT'
               FROM `visitor` 
               WHERE `checkin` >= @datepicked
               AND `checkin` < @datepicked + INTERVAL 1 DAY
@@ -31,6 +31,7 @@ Public Class ttlVisitor
 
             adapter.Fill(table)
             tblreport.DataSource = table
+
 
             conn.Close()
 
@@ -79,4 +80,5 @@ Public Class ttlVisitor
         End If
 
     End Sub
+
 End Class

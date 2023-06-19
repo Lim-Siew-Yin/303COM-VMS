@@ -159,7 +159,7 @@ Public Class checkin
             txtic.Select()
         Else
             'check other required field
-            If txtname.Text = "" Or txtcontact.Text = "" Or cmbunit.Text = "" Or cmbhost.Text = "" Or txtpurpose.Text = "" Or txtbadge.Text = "" Then
+            If txtname.Text = "" Or txtcontact.Text = "" Or txtVisitorQty.Text = "" Or cmbunit.Text = "" Or cmbhost.Text = "" Or txtpurpose.Text = "" Or txtbadge.Text = "" Then
                 MsgBox("Please fill in the required field.")
                 Exit Sub
             Else

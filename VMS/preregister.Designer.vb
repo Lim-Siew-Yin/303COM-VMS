@@ -137,9 +137,9 @@ Partial Class preregister
         Me.Label16.Location = New System.Drawing.Point(649, 253)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(94, 24)
+        Me.Label16.Size = New System.Drawing.Size(101, 24)
         Me.Label16.TabIndex = 33
-        Me.Label16.Text = "Visitor Qty"
+        Me.Label16.Text = "Visitor Qty*"
         '
         'cmbVehicleType
         '

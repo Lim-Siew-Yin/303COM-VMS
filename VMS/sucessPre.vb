@@ -24,8 +24,6 @@ Public Class successPre
         sestime = ""
 
         Me.Close()
-        checkin.Close()
-        delcheckin.Close()
         visitortype.Close()
 
     End Sub

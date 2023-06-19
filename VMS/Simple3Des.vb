@@ -3,9 +3,7 @@
 Public NotInheritable Class Simple3Des
     Private TripleDes As New TripleDESCryptoServiceProvider
 
-    Private Function TruncateHash(
-    ByVal key As String,
-    ByVal length As Integer) As Byte()
+    Private Function TruncateHash(ByVal key As String, ByVal length As Integer) As Byte()
 
         Dim sha1 As New SHA1CryptoServiceProvider
 
@@ -25,8 +23,7 @@ Public NotInheritable Class Simple3Des
         TripleDes.IV = TruncateHash("", TripleDes.BlockSize \ 8)
     End Sub
 
-    Public Function EncryptData(
-    ByVal plaintext As String) As String
+    Public Function EncryptData(ByVal plaintext As String) As String
 
         ' Convert the plaintext string to a byte array.
         Dim plaintextBytes() As Byte =
@@ -47,8 +44,7 @@ Public NotInheritable Class Simple3Des
         Return Convert.ToBase64String(ms.ToArray)
     End Function
 
-    Public Function DecryptData(
-    ByVal encryptedtext As String) As String
+    Public Function DecryptData(ByVal encryptedtext As String) As String
 
         ' Convert the encrypted text string to a byte array.
         Dim encryptedBytes() As Byte = Convert.FromBase64String(encryptedtext)

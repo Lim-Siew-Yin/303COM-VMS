@@ -10,6 +10,7 @@ Public Class preregister
         unitcmb(cmbunit)                        'populate unit combobox
         txtic.Select()                          'focus on ic
 
+        'initialise datepicker
         With txtdate
             .Value = DateTime.Now
             .Format = DateTimePickerFormat.Custom
@@ -39,10 +40,12 @@ Public Class preregister
     End Sub
 
     Private Sub dtcheckin_Click(sender As Object, e As EventArgs) Handles txtdate.Click
+        'check datepicker when clicked (for empty field validation)
         txtdate.Checked = True
     End Sub
 
     Private Sub dtcheckin_ValueChanged(sender As Object, e As EventArgs) Handles txtdate.ValueChanged
+        'datepicker formating
         If txtdate.Format = DateTimePickerFormat.Custom AndAlso txtdate.CustomFormat = " " Then
             txtdate.Format = DateTimePickerFormat.Short
         End If
@@ -67,6 +70,7 @@ Public Class preregister
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
+                'retrieve ic record from db
                 Dim query1 = "SELECT * FROM `visitor` WHERE `ic` = @ic"
                 Dim command1 As New MySqlCommand(query1, conn)
                 command1.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
@@ -116,7 +120,7 @@ Public Class preregister
         'get last 4 digit
         Dim pass As String = Microsoft.VisualBasic.Right(txtpassport.Text, 4)
 
-        'encrypt ic
+        'encrypt passport
         Dim encryptPassport As String = strEncrypt(txtpassport.Text, pass)
 
         If txtpassport.Text.Trim = "" Then
@@ -130,7 +134,7 @@ Public Class preregister
 
                 Dim query1 = "SELECT * FROM `visitor` WHERE `passport` = @passport"
                 Dim command1 As New MySqlCommand(query1, conn)
-                command1.Parameters.Add("@passport", MySqlDbType.VarChar).Value = txtpassport.Text
+                command1.Parameters.Add("@passport", MySqlDbType.VarChar).Value = encryptPassport
                 reader = command1.ExecuteReader()
                 Dim count As Integer
                 count = 0
@@ -191,7 +195,7 @@ Public Class preregister
                         MsgBox("FAILED TO CONNECT TO DATABASE")
                     End If
 
-                    'set id format
+                    'reset ic format
                     Dim id, ic, pass As String
                     Dim fullic As String = txtic.Text
                     fullic = fullic.Replace("-", "")    'remove -
@@ -225,7 +229,7 @@ Public Class preregister
                         Exit Sub
                     End If
 
-                    'check ic
+                    'set id format
                     If txtic.MaskCompleted = True And txtpassport.Text.Trim = "" Then
                         id = ic & "-" & datenow     'customise id
                         sesic = txtic.Text
@@ -279,20 +283,16 @@ Public Class preregister
 
                     reader = command3.ExecuteReader()
 
+                    'generate qrcode and assign value for successPre page
                     sestime = dt
-                    Dim successStr As String = encryptIC + "; " + encryptPassport + "; Name: " + txtname.Text + "; Time: " + dt + "; Unit: " + unitno + "; Host:" + cmbhost.Text
-                    qrcodeGen(successStr)
-
                     successPre.lblhost.Text = cmbhost.Text
                     successPre.lblunit.Text = unitno
+                    Dim successStr As String = encryptIC + "; " + encryptPassport + "; Name: " + txtname.Text + "; Time: " + dt + "; Unit: " + unitno + "; Host:" + cmbhost.Text
+                    qrcodeGen(successStr)
                     successPre.Show()
+
                     reader.Close()
                     conn.Close()
-
-
-                    If role IsNot "tenant" Then
-                        visitortype.Show()
-                    End If
 
                     Me.Close()
                 Catch ex As Exception
@@ -304,6 +304,7 @@ Public Class preregister
 
     Private Sub cmbunit_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbunit.SelectedIndexChanged
         'retrieve host when select unit
+        'reset unit format
         Dim unitori, unitno As String
         If cmbunit.Text = "" Then
             Exit Sub
@@ -312,6 +313,7 @@ Public Class preregister
             unitno = unitori.Substring(0, unitori.IndexOf("|"))
         End If
 
+        'retrieve host
         If unitno IsNot "" Then
             hostcmb(cmbhost, unitno)
         End If
@@ -319,9 +321,12 @@ Public Class preregister
 
     Private Function qrcodeGen(str As String)
         Try
+            'generate qrcode
             Dim qrCode As New QRCodeEncoder
             qrCode.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE
             qrCode.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.L
+
+            'display on successPre page
             successPre.picQR.Image = qrCode.Encode(str, System.Text.Encoding.UTF8)
 
 

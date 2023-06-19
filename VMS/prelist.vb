@@ -37,22 +37,28 @@ Public Class prelist
                 Dim fullic As String = txtic.Text
                 fullic = fullic.Replace("-", "")    'remove -
 
+                'get last 4 digit
+                Dim ic As String = Microsoft.VisualBasic.Right(fullic, 4)
+
+                'encrypt ic
+                Dim encryptIC As String = strEncrypt(fullic, ic)
+
                 Dim query As String
                 If role = "tenant" Then
-                    query = "SELECT id, precheckin AS 'PRE-REGISTER DATE', name AS 'NAME', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', host as 'HOST' 
+                    query = "SELECT `prereg_id`, `precheckin` AS 'PRE-REGISTER DATE', `name` AS 'NAME', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` as 'HOST' 
                          FROM `preregister` 
                          WHERE `ic` = @ic
-                         AND `unit` = @tenant
+                         AND `unit-no` = @tenant
                          ORDER BY `precheckin`"
                 Else
-                    query = "SELECT id, precheckin AS 'PRE-REGISTER DATE', name AS 'NAME', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', host as 'HOST' 
+                    query = "SELECT `prereg_id`, `precheckin` AS 'PRE-REGISTER DATE', `name` AS 'NAME', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` as 'HOST' 
                          FROM `preregister` 
                          WHERE `ic` = @ic
                          ORDER BY `precheckin`"
                 End If
 
                 Dim command As New MySqlCommand(query, conn)
-                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = fullic
+                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
                 command.Parameters.Add("@tenant", MySqlDbType.VarChar).Value = tenantname
 
 
@@ -60,12 +66,12 @@ Public Class prelist
                 Dim table As New DataTable()
                 reader = command.ExecuteReader
                 If reader.HasRows Then
-
+                    'display on table if has record
                     reader.Close()
                     adapter.Fill(table)
                     tblprelist.DataSource = table
 
-
+                    'add button for mark arrival
                     tblprelist.Columns(0).Visible = False
                     Dim btn As New DataGridViewButtonColumn()
                     tblprelist.Columns.Add(btn)
@@ -110,22 +116,28 @@ Public Class prelist
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
+                'get last 4 digit
+                Dim pass As String = Microsoft.VisualBasic.Right(txtpass.Text, 4)
+
+                'encrypt passport
+                Dim encryptPassport As String = strEncrypt(txtpass.Text, pass)
+
                 Dim query As String
                 If role = "tenant" Then
-                    query = "SELECT id, precheckin AS 'PRE-REGISTER DATE', name AS 'NAME', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', host as 'HOST' 
+                    query = "SELECT `prereg_id`, `precheckin` AS 'PRE-REGISTER DATE', `name` AS 'NAME', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` as 'HOST' 
                          FROM `preregister` 
                          WHERE `passport` = @passport
-                         AND `unit` = @tenant
+                         AND `unit-no` = @tenant
                          ORDER BY `precheckin`"
                 Else
-                    query = "SELECT id, precheckin AS 'PRE-REGISTER DATE', name AS 'NAME', company AS 'COMPANY', vehicleno AS 'VEHICLE NO', unit AS 'UNIT', host as 'HOST' 
+                    query = "SELECT `prereg_id`, `precheckin` AS 'PRE-REGISTER DATE', `name` AS 'NAME', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO', `unit-no` AS 'UNIT', `host-id` as 'HOST'
                          FROM `preregister` 
                          WHERE `passport` = @passport
                          ORDER BY `precheckin`"
                 End If
 
                 Dim command As New MySqlCommand(query, conn)
-                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = txtpass.Text
+                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = encryptPassport
                 command.Parameters.Add("@tenant", MySqlDbType.VarChar).Value = tenantname
 
 
@@ -133,11 +145,12 @@ Public Class prelist
                 Dim table As New DataTable()
                 reader = command.ExecuteReader
                 If reader.HasRows Then
-
+                    'display on table if has record
                     reader.Close()
                     adapter.Fill(table)
                     tblprelist.DataSource = table
 
+                    'add button for mark arrival
                     tblprelist.Columns(0).Visible = False
                     Dim btn As New DataGridViewButtonColumn()
                     tblprelist.Columns.Add(btn)
@@ -185,6 +198,12 @@ Public Class prelist
                 Dim fullic As String = txtic.Text
                 fullic = fullic.Replace("-", "")    'remove -
 
+                'encrypt ic (*will still encrypt empty field)
+                Dim encryptIC As String = strEncrypt(fullic, oriid)
+                Dim pass As String = Microsoft.VisualBasic.Right(txtpass.Text, 4)
+                Dim encryptPassport As String = strEncrypt(txtpass.Text, pass)
+
+                Dim visitorqty As Int32 = InputBox("Please insert number of visitor present", "Visitor Quantity", "")
                 Dim badgeno As String = InputBox("Please insert badge no. given to visitor.", "Badge No.", "")
 
                 'check user has checked in or not
@@ -204,8 +223,8 @@ Public Class prelist
                 End If
 
                 Dim command As New MySqlCommand(query, conn)
-                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = fullic
-                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = txtpass.Text
+                command.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
+                command.Parameters.Add("@passport", MySqlDbType.VarChar).Value = encryptPassport
 
                 reader = command.ExecuteReader()
                 Dim count As Integer
@@ -221,21 +240,33 @@ Public Class prelist
                 Else
                     reader.Close()
                     Try
-                        'insert record
-                        Dim query2 = "INSERT INTO `visitor` (id, name, ic, passport, email, contact, vehicleno, unit, host, purpose, remark) 
-                                SELECT `id`, `name`, `ic`, `passport`, `email`, `contact`, `vehicleno`, `unit`, `host`, `purpose`, `remark` 
-                                FROM `preregister` WHERE `id` = @rowid;
-                                UPDATE `visitor` SET `id` = @newid, `visitortype` = 'walkin',`badge` = @badge, `checkin` = NOW() WHERE `id` = @rowid;
-                                DELETE FROM `preregister` WHERE `id` = @rowid;"
-                        Dim command2 As New MySqlCommand(query2, conn)
-                        command2.Parameters.Add("@rowid", MySqlDbType.VarChar).Value = rowid
-                        command2.Parameters.Add("@newid", MySqlDbType.VarChar).Value = newid
-                        command2.Parameters.Add("@badge", MySqlDbType.VarChar).Value = badgeno
 
-                        reader = command2.ExecuteReader()
+                        'open form2 to take picture
+                        'validate if picture taken and form2 closed
+                        If capturephoto.ShowDialog() = DialogResult.OK And arrImage IsNot Nothing And arrImage.Length > 0 Then
 
-                        MsgBox("Check In Successful")
-                        reader.Close()
+                            'insert record
+                            'select record form preregister table and insert to visitor table
+                            'update empty field in visitor table
+                            'delete preregister table record
+                            Dim query2 = "INSERT INTO `visitor` (`visitor_id`, `name`, `ic`, `passport`, `email`, `contact`, `vehicleno`, `unit-no`, `host-id`, `purpose`, `remark`) 
+                                SELECT `prereg_id`, `name`, `ic`, `passport`, `email`, `contact`, `vehicleno`, `unit-no`, `host-id`, `purpose`, `remark` 
+                                FROM `preregister` WHERE `prereg_id` = @rowid;
+                                UPDATE `visitor` SET `visitor_id` = @newid, `visitortype` = 'walkin', `visitorqty` = @visitorqty, `badge` = @badge, `checkin` = NOW(), `photo` = @photo WHERE `visitor_id` = @rowid;
+                                DELETE FROM `preregister` WHERE `prereg_id` = @rowid;"
+                            Dim command2 As New MySqlCommand(query2, conn)
+                            command2.Parameters.Add("@rowid", MySqlDbType.VarChar).Value = rowid
+                            command2.Parameters.Add("@newid", MySqlDbType.VarChar).Value = newid
+                            command2.Parameters.Add("@visitorqty", MySqlDbType.Int32).Value = visitorqty
+                            command2.Parameters.Add("@badge", MySqlDbType.VarChar).Value = badgeno
+                            command2.Parameters.AddWithValue("@photo", arrImage)
+
+                            reader = command2.ExecuteReader()
+
+                            MsgBox("Check In Successful")
+                            reader.Close()
+
+                        End If
                         conn.Close()
                     Catch ex As Exception
                         MsgBox("CHECK IN ERROR: " & ex.Message)
