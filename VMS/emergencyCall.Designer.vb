@@ -33,7 +33,6 @@ Partial Class emergencyCall
         '
         Me.tblCall.AllowUserToAddRows = False
         Me.tblCall.AllowUserToDeleteRows = False
-        Me.tblCall.AllowUserToResizeRows = False
         Me.tblCall.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tblCall.BackgroundColor = System.Drawing.SystemColors.Control
         Me.tblCall.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -83,6 +82,7 @@ Partial Class emergencyCall
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(772, 699)
         Me.Controls.Add(Me.Label11)

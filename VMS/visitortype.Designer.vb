@@ -48,7 +48,7 @@ Partial Class visitortype
         Me.btnhome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnhome.ForeColor = System.Drawing.Color.White
         Me.btnhome.Location = New System.Drawing.Point(732, 664)
-        Me.btnhome.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnhome.Margin = New System.Windows.Forms.Padding(4)
         Me.btnhome.Name = "btnhome"
         Me.btnhome.Size = New System.Drawing.Size(244, 45)
         Me.btnhome.TabIndex = 3
@@ -62,7 +62,7 @@ Partial Class visitortype
         Me.btnsub.ForeColor = System.Drawing.Color.White
         Me.btnsub.Image = Global.VMS.My.Resources.Resources.preregister
         Me.btnsub.Location = New System.Drawing.Point(1221, 304)
-        Me.btnsub.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnsub.Margin = New System.Windows.Forms.Padding(4)
         Me.btnsub.Name = "btnsub"
         Me.btnsub.Padding = New System.Windows.Forms.Padding(0, 0, 0, 24)
         Me.btnsub.Size = New System.Drawing.Size(267, 248)
@@ -78,7 +78,7 @@ Partial Class visitortype
         Me.btndel.ForeColor = System.Drawing.Color.White
         Me.btndel.Image = CType(resources.GetObject("btndel.Image"), System.Drawing.Image)
         Me.btndel.Location = New System.Drawing.Point(720, 304)
-        Me.btndel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btndel.Margin = New System.Windows.Forms.Padding(4)
         Me.btndel.Name = "btndel"
         Me.btndel.Padding = New System.Windows.Forms.Padding(0, 0, 0, 24)
         Me.btndel.Size = New System.Drawing.Size(267, 248)
@@ -95,7 +95,7 @@ Partial Class visitortype
         Me.btnnor.ForeColor = System.Drawing.Color.White
         Me.btnnor.Image = Global.VMS.My.Resources.Resources.user1
         Me.btnnor.Location = New System.Drawing.Point(219, 304)
-        Me.btnnor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnnor.Margin = New System.Windows.Forms.Padding(4)
         Me.btnnor.Name = "btnnor"
         Me.btnnor.Padding = New System.Windows.Forms.Padding(0, 0, 0, 24)
         Me.btnnor.Size = New System.Drawing.Size(267, 248)
@@ -108,6 +108,7 @@ Partial Class visitortype
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(1645, 797)
         Me.Controls.Add(Me.btnhome)
@@ -116,11 +117,10 @@ Partial Class visitortype
         Me.Controls.Add(Me.btnnor)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "visitortype"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Visitor Type"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

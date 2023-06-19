@@ -132,13 +132,13 @@ Partial Class home
         'SettingToolStripMenuItem
         '
         Me.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem"
-        Me.SettingToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SettingToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
         Me.SettingToolStripMenuItem.Text = "Setting"
         '
         'EmergencyCallListToolStripMenuItem
         '
         Me.EmergencyCallListToolStripMenuItem.Name = "EmergencyCallListToolStripMenuItem"
-        Me.EmergencyCallListToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.EmergencyCallListToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
         Me.EmergencyCallListToolStripMenuItem.Text = "Emergency Call"
         '
         'HelpToolStripMenuItem
@@ -151,19 +151,19 @@ Partial Class home
         'RefreshToolStripMenuItem
         '
         Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
         'CheckConnectionToolStripMenuItem
         '
         Me.CheckConnectionToolStripMenuItem.Name = "CheckConnectionToolStripMenuItem"
-        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.CheckConnectionToolStripMenuItem.Text = "Check Connection"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'LoginToolStripMenuItem

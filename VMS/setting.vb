@@ -83,6 +83,8 @@ Public Class setting
         Me.Controls.Clear()     'removes all the controls on the form
         InitializeComponent()   'load all the controls again
         setting_Load(e, e)      'run load page
+        Me.Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom Or AnchorStyles.Left
+        'Me.FormBorderStyle = FormBorderStyle.None
 
     End Sub
 

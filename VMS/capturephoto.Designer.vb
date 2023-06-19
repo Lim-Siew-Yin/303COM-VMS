@@ -105,6 +105,7 @@ Partial Class capturephoto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(893, 550)
         Me.Controls.Add(Me.lblcamera)
@@ -114,6 +115,7 @@ Partial Class capturephoto
         Me.Controls.Add(Me.btnCapture)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "capturephoto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Capture Photo"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

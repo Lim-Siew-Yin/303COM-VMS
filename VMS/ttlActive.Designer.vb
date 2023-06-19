@@ -39,7 +39,7 @@ Partial Class ttlActive
         Me.btnhome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnhome.ForeColor = System.Drawing.Color.White
         Me.btnhome.Location = New System.Drawing.Point(910, 724)
-        Me.btnhome.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnhome.Margin = New System.Windows.Forms.Padding(4)
         Me.btnhome.Name = "btnhome"
         Me.btnhome.Size = New System.Drawing.Size(183, 46)
         Me.btnhome.TabIndex = 1
@@ -54,7 +54,7 @@ Partial Class ttlActive
         Me.btnback.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnback.ForeColor = System.Drawing.Color.White
         Me.btnback.Location = New System.Drawing.Point(626, 724)
-        Me.btnback.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnback.Margin = New System.Windows.Forms.Padding(4)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(183, 46)
         Me.btnback.TabIndex = 0
@@ -72,7 +72,7 @@ Partial Class ttlActive
         Me.tblreport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.tblreport.GridColor = System.Drawing.SystemColors.ActiveBorder
         Me.tblreport.Location = New System.Drawing.Point(0, 179)
-        Me.tblreport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tblreport.Margin = New System.Windows.Forms.Padding(4)
         Me.tblreport.Name = "tblreport"
         Me.tblreport.ReadOnly = True
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -103,6 +103,7 @@ Partial Class ttlActive
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(1726, 839)
         Me.Controls.Add(Me.Label1)
@@ -112,7 +113,6 @@ Partial Class ttlActive
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MaximizeBox = False
         Me.Name = "ttlActive"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Total Active"

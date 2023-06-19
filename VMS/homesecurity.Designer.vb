@@ -133,31 +133,31 @@ Partial Class homesecurity
         'RefreshToolStripMenuItem
         '
         Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
         'CheckConnectionToolStripMenuItem
         '
         Me.CheckConnectionToolStripMenuItem.Name = "CheckConnectionToolStripMenuItem"
-        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.CheckConnectionToolStripMenuItem.Text = "Check Connection"
         '
         'ResetPasswordToolStripMenuItem
         '
         Me.ResetPasswordToolStripMenuItem.Name = "ResetPasswordToolStripMenuItem"
-        Me.ResetPasswordToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ResetPasswordToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.ResetPasswordToolStripMenuItem.Text = "Reset Password"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'EmergencyCallToolStripMenuItem
         '
         Me.EmergencyCallToolStripMenuItem.Name = "EmergencyCallToolStripMenuItem"
-        Me.EmergencyCallToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.EmergencyCallToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.EmergencyCallToolStripMenuItem.Text = "Emergency Call"
         '
         'btndashboard

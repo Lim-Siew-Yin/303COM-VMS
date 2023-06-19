@@ -134,7 +134,7 @@ Partial Class report
         '
         'btnexport
         '
-        Me.btnexport.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnexport.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnexport.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnexport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnexport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -211,7 +211,7 @@ Partial Class report
         '
         'btnback
         '
-        Me.btnback.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnback.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnback.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnback.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -363,6 +363,7 @@ Partial Class report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(1574, 904)
         Me.Controls.Add(Me.Label11)
@@ -393,7 +394,6 @@ Partial Class report
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MaximizeBox = False
         Me.Name = "report"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Report"

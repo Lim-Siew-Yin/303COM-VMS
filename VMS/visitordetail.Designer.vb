@@ -75,6 +75,7 @@ Partial Class visitordetail
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnclear)
@@ -114,7 +115,7 @@ Partial Class visitordetail
         Me.Panel1.Location = New System.Drawing.Point(629, 48)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1217, 956)
+        Me.Panel1.Size = New System.Drawing.Size(1217, 1004)
         Me.Panel1.TabIndex = 7
         '
         'btnclear
@@ -337,7 +338,7 @@ Partial Class visitordetail
         Me.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnback.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnback.ForeColor = System.Drawing.Color.White
-        Me.btnback.Location = New System.Drawing.Point(667, 899)
+        Me.btnback.Location = New System.Drawing.Point(667, 908)
         Me.btnback.Margin = New System.Windows.Forms.Padding(4)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(192, 38)
@@ -584,8 +585,9 @@ Partial Class visitordetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(1900, 1055)
+        Me.ClientSize = New System.Drawing.Size(1900, 1103)
         Me.Controls.Add(Me.lblblacklist)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
@@ -596,7 +598,6 @@ Partial Class visitordetail
         Me.Controls.Add(Me.txtpassport)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label13)
-        Me.MaximizeBox = False
         Me.Name = "visitordetail"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "visitordetail"
