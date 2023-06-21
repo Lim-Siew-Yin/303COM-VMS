@@ -223,7 +223,8 @@ Public Class preregister
                     End If
 
                     'validate date
-                    Dim result As Int16 = DateTime.Compare(dt, Date.Today)
+                    Dim result As Int16 = DateTime.Compare(dt, DateTime.Now())
+                    'MsgBox(dt + " vs " + DateTime.Now())
                     If (result < 0) Then
                         MsgBox("Please select date later than today")
                         Exit Sub

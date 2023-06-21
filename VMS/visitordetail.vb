@@ -391,9 +391,12 @@ Public Class visitordetail
 
                 'display photo
                 If reader(21) IsNot DBNull.Value Then
+
+
                     arrImage = reader(21)
                     Dim mstream As New System.IO.MemoryStream(arrImage)
                     imgCaptured.Image = Image.FromStream(mstream)
+
 
                 Else
                     'clear arrimage
@@ -584,6 +587,7 @@ Public Class visitordetail
         txtpurpose.Text = ""
         txtbadge.Text = ""
         txtremark.Text = ""
+        lblblacklist.Text = ""
 
         imgCaptured.Image = Nothing
         tblhistory.DataSource = Nothing

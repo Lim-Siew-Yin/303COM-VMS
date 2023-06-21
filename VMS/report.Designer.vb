@@ -146,12 +146,12 @@ Partial Class report
         Me.btnexport.TabIndex = 8
         Me.btnexport.Text = "Export As Excel"
         Me.btnexport.UseVisualStyleBackColor = False
+        Me.btnexport.UseWaitCursor = True
         '
         'tblreport
         '
         Me.tblreport.AllowUserToAddRows = False
         Me.tblreport.AllowUserToDeleteRows = False
-        Me.tblreport.AllowUserToResizeColumns = False
         Me.tblreport.AllowUserToResizeRows = False
         Me.tblreport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
@@ -172,7 +172,7 @@ Partial Class report
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         Me.tblreport.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.tblreport.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.tblreport.Size = New System.Drawing.Size(1219, 529)
+        Me.tblreport.Size = New System.Drawing.Size(1136, 529)
         Me.tblreport.TabIndex = 0
         '
         'Panel1

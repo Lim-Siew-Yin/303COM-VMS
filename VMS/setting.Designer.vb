@@ -23,9 +23,9 @@ Partial Class setting
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(setting))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnrefresh = New System.Windows.Forms.Button()
         Me.btnbackg = New System.Windows.Forms.Button()
@@ -183,6 +183,7 @@ Partial Class setting
         '
         'tabproduct
         '
+        Me.tabproduct.AutoScroll = True
         Me.tabproduct.BackColor = System.Drawing.Color.LightSteelBlue
         Me.tabproduct.Controls.Add(Me.Label2)
         Me.tabproduct.Controls.Add(Me.btnactivate)
@@ -255,6 +256,7 @@ Partial Class setting
         '
         'tabbackup
         '
+        Me.tabbackup.AutoScroll = True
         Me.tabbackup.BackColor = System.Drawing.Color.LightSteelBlue
         Me.tabbackup.Controls.Add(Me.btnrestore)
         Me.tabbackup.Controls.Add(Me.btnbackup)
@@ -333,6 +335,7 @@ Partial Class setting
         '
         'tabuser
         '
+        Me.tabuser.AutoScroll = True
         Me.tabuser.BackColor = System.Drawing.Color.LightSteelBlue
         Me.tabuser.Controls.Add(Me.listUserUnit)
         Me.tabuser.Controls.Add(Me.Label23)
@@ -612,14 +615,14 @@ Partial Class setting
         Me.tblUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblUser.Name = "tblUser"
         Me.tblUser.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblUser.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblUser.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.tblUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblUser.RowTemplate.Height = 33
         Me.tblUser.Size = New System.Drawing.Size(571, 199)
@@ -642,7 +645,6 @@ Partial Class setting
         Me.tabsetting.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.tabsetting.SelectedIndex = 0
         Me.tabsetting.Size = New System.Drawing.Size(1695, 913)
-        Me.tabsetting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.tabsetting.TabIndex = 0
         '
         'tabgeneral
@@ -699,14 +701,14 @@ Partial Class setting
         Me.tblEmergency.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblEmergency.Name = "tblEmergency"
         Me.tblEmergency.ReadOnly = True
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblEmergency.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblEmergency.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.tblEmergency.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblEmergency.RowTemplate.Height = 33
         Me.tblEmergency.Size = New System.Drawing.Size(599, 229)
@@ -936,6 +938,7 @@ Partial Class setting
         '
         'tabunit
         '
+        Me.tabunit.AutoScroll = True
         Me.tabunit.BackColor = System.Drawing.Color.LightSteelBlue
         Me.tabunit.Controls.Add(Me.txtContact)
         Me.tabunit.Controls.Add(Me.txtEmail)
@@ -1008,14 +1011,14 @@ Partial Class setting
         Me.tblHost.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblHost.Name = "tblHost"
         Me.tblHost.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblHost.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblHost.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.tblHost.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblHost.RowTemplate.Height = 33
         Me.tblHost.Size = New System.Drawing.Size(667, 229)

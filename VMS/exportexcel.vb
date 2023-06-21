@@ -12,12 +12,17 @@ Imports System.Xml
 
 Module exportexcel
     Public Sub dgvtoexcel(ByVal DGV As DataGridView)
-        Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        Try
+
+            Dim xlApp As Microsoft.Office.Interop.Excel.Application
         Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
         Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
         Dim misValue As Object = System.Reflection.Missing.Value
         Dim i As Integer
         Dim j As Integer
+
+        'get today date
+        Dim now As String = DateTime.Now.ToString("ddMMyyyy HHmmss")
 
         xlApp = New Microsoft.Office.Interop.Excel.Application
         xlWorkBook = xlApp.Workbooks.Add(misValue)
@@ -37,7 +42,7 @@ Module exportexcel
         If downloadpath = "" Then
             Exit Sub
         Else
-            xlWorkSheet.SaveAs(downloadpath & "\report_export.xlsx")
+            xlWorkSheet.SaveAs(downloadpath & "\report_export " & now & ".xlsx")
 
         End If
 
@@ -48,7 +53,13 @@ Module exportexcel
         releaseObject(xlWorkBook)
         releaseObject(xlWorkSheet)
 
-        MsgBox("DOWNLOAD SUCCESSFUL: You can find the file at " & downloadpath)
+            MsgBox("DOWNLOAD SUCCESSFUL: You can find the file at " & downloadpath)
+
+
+        Catch ex As Exception
+            MsgBox("EXPORT REPORT ERROR: " & ex.Message)
+        End Try
+
 
     End Sub
     Private Sub releaseObject(ByVal obj As Object)

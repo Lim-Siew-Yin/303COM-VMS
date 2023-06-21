@@ -124,7 +124,7 @@ Partial Class visitordetail
         Me.btnclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnclear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnclear.ForeColor = System.Drawing.Color.White
-        Me.btnclear.Location = New System.Drawing.Point(877, 842)
+        Me.btnclear.Location = New System.Drawing.Point(877, 900)
         Me.btnclear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(192, 38)
@@ -135,7 +135,7 @@ Partial Class visitordetail
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(594, 784)
+        Me.Label19.Location = New System.Drawing.Point(594, 842)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(325, 17)
         Me.Label19.TabIndex = 37
@@ -175,7 +175,7 @@ Partial Class visitordetail
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(593, 403)
+        Me.Label18.Location = New System.Drawing.Point(593, 461)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(106, 24)
@@ -199,8 +199,11 @@ Partial Class visitordetail
         Me.imgCaptured.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.imgCaptured.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.imgCaptured.Location = New System.Drawing.Point(590, 92)
+        Me.imgCaptured.MaximumSize = New System.Drawing.Size(552, 272)
+        Me.imgCaptured.MinimumSize = New System.Drawing.Size(552, 272)
         Me.imgCaptured.Name = "imgCaptured"
         Me.imgCaptured.Size = New System.Drawing.Size(552, 272)
+        Me.imgCaptured.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.imgCaptured.TabIndex = 30
         Me.imgCaptured.TabStop = False
         '
@@ -209,7 +212,7 @@ Partial Class visitordetail
         Me.tblhistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tblhistory.BackgroundColor = System.Drawing.SystemColors.Control
         Me.tblhistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tblhistory.Location = New System.Drawing.Point(590, 430)
+        Me.tblhistory.Location = New System.Drawing.Point(590, 488)
         Me.tblhistory.Name = "tblhistory"
         Me.tblhistory.RowHeadersWidth = 51
         Me.tblhistory.RowTemplate.Height = 24
@@ -338,7 +341,7 @@ Partial Class visitordetail
         Me.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnback.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnback.ForeColor = System.Drawing.Color.White
-        Me.btnback.Location = New System.Drawing.Point(667, 908)
+        Me.btnback.Location = New System.Drawing.Point(667, 966)
         Me.btnback.Margin = New System.Windows.Forms.Padding(4)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(192, 38)
@@ -458,7 +461,7 @@ Partial Class visitordetail
         Me.btnwhitelist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnwhitelist.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnwhitelist.ForeColor = System.Drawing.Color.White
-        Me.btnwhitelist.Location = New System.Drawing.Point(667, 842)
+        Me.btnwhitelist.Location = New System.Drawing.Point(667, 900)
         Me.btnwhitelist.Margin = New System.Windows.Forms.Padding(4)
         Me.btnwhitelist.Name = "btnwhitelist"
         Me.btnwhitelist.Size = New System.Drawing.Size(192, 38)
@@ -473,7 +476,7 @@ Partial Class visitordetail
         Me.btnblacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnblacklist.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnblacklist.ForeColor = System.Drawing.Color.White
-        Me.btnblacklist.Location = New System.Drawing.Point(667, 842)
+        Me.btnblacklist.Location = New System.Drawing.Point(667, 900)
         Me.btnblacklist.Margin = New System.Windows.Forms.Padding(4)
         Me.btnblacklist.Name = "btnblacklist"
         Me.btnblacklist.Size = New System.Drawing.Size(192, 38)
