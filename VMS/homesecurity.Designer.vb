@@ -125,7 +125,7 @@ Partial Class homesecurity
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.CheckConnectionToolStripMenuItem, Me.ResetPasswordToolStripMenuItem, Me.AboutToolStripMenuItem, Me.EmergencyCallToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.CheckConnectionToolStripMenuItem, Me.ResetPasswordToolStripMenuItem, Me.EmergencyCallToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -133,31 +133,31 @@ Partial Class homesecurity
         'RefreshToolStripMenuItem
         '
         Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
         'CheckConnectionToolStripMenuItem
         '
         Me.CheckConnectionToolStripMenuItem.Name = "CheckConnectionToolStripMenuItem"
-        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.CheckConnectionToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.CheckConnectionToolStripMenuItem.Text = "Check Connection"
         '
         'ResetPasswordToolStripMenuItem
         '
         Me.ResetPasswordToolStripMenuItem.Name = "ResetPasswordToolStripMenuItem"
-        Me.ResetPasswordToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.ResetPasswordToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ResetPasswordToolStripMenuItem.Text = "Reset Password"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'EmergencyCallToolStripMenuItem
         '
         Me.EmergencyCallToolStripMenuItem.Name = "EmergencyCallToolStripMenuItem"
-        Me.EmergencyCallToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.EmergencyCallToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.EmergencyCallToolStripMenuItem.Text = "Emergency Call"
         '
         'btndashboard
@@ -210,7 +210,7 @@ Partial Class homesecurity
         Me.MaximizeBox = False
         Me.Name = "homesecurity"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Visitor Management System - Security Guard Home Page"
+        Me.Text = "MyLobby -  Guard Home Page"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

@@ -13,8 +13,8 @@ Public Class dashboard
                 MsgBox("FAILED TO CONNECT TO DATABASE")
             End If
 
+            'default: display today's counter
             If radioToday.Checked = True Then
-
                 'total visitor
                 Dim query1 = "SELECT COUNT(`visitor_id`) AS 'tvisitor'
                   FROM `visitor` 
@@ -116,13 +116,11 @@ Public Class dashboard
 
 
     Function loadVisitor(ByRef datepicked As Date) As String
-
+        'load function if date is picked
         Try
             If Not opendb() Then
                 MsgBox("FAILED TO CONNECT TO DATABASE")
             End If
-
-            'MsgBox(datepicked)
 
             'total visitor
             Dim query1 = "SELECT COUNT(`visitor_id`) AS 'tvisitor'

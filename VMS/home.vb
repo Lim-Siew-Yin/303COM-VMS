@@ -4,6 +4,7 @@
         lblconame.Text = My.Settings.cname
 
         If logined = True Then
+            'display logout if login detected
             LoginToolStripMenuItem.Text = "Logout"
         End If
     End Sub
@@ -11,6 +12,7 @@
 
     'main buttons
     Private Sub btnin_Click(sender As Object, e As EventArgs) Handles btnin.Click
+        'check if windows is opened 
         If visitortype.Visible = False Then
             visitortype.Show()
         Else
@@ -86,7 +88,7 @@
     End Sub
 
     Private Sub CheckConnectionToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CheckConnectionToolStripMenuItem.Click
-        If CheckDatabaseExists("vms") Then
+        If CheckDatabaseExists("vms1") Then
 
             If opendb() Then
                 MsgBox("CONNECTION SUCCESSFUL")
@@ -95,7 +97,7 @@
                 MsgBox("FAILED TO CONNECT TO DATABASE")
             End If
         Else
-            CreateDatabase("vms")
+            CreateDatabase("vms1")
             MsgBox("Database Created Successfully!")
 
             If opendb() Then

@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Visitor Management System")>
+<Assembly: AssemblyTitle("MyLobby Visitor Management System")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("My Software Solution")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Visitor Management System")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyCopyright("Copyright ©  2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

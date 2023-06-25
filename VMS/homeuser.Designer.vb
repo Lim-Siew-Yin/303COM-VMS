@@ -126,7 +126,7 @@ Partial Class homeuser
         Me.btnsetting.Name = "btnsetting"
         Me.btnsetting.Size = New System.Drawing.Size(269, 110)
         Me.btnsetting.TabIndex = 3
-        Me.btnsetting.Text = "SETTING"
+        Me.btnsetting.Text = "SETTINGS"
         Me.btnsetting.UseVisualStyleBackColor = False
         '
         'homeuser
@@ -149,7 +149,7 @@ Partial Class homeuser
         Me.MaximizeBox = False
         Me.Name = "homeuser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Visitor Management System - Tenant Home Page"
+        Me.Text = "MyLobby - Host Home Page"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

@@ -603,7 +603,7 @@ Partial Class visitordetail
         Me.Controls.Add(Me.Label13)
         Me.Name = "visitordetail"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "visitordetail"
+        Me.Text = "Visitor Details"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

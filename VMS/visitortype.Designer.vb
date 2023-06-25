@@ -110,7 +110,7 @@ Partial Class visitortype
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(1645, 797)
+        Me.ClientSize = New System.Drawing.Size(1697, 797)
         Me.Controls.Add(Me.btnhome)
         Me.Controls.Add(Me.btnsub)
         Me.Controls.Add(Me.btndel)

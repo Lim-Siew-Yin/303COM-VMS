@@ -6,7 +6,7 @@ Public Class setting
     Dim reader As MySqlDataReader
     Private Sub setting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtPropertyName.Text = My.Settings.cname
-        txtactivationcode.Text = My.Settings.acticode
+
 
         compcmb(listDelivery)   'load delivery company list
         unitcmb(listUnit)       'load unit list (unit)
@@ -775,7 +775,7 @@ Public Class setting
 
                 Dim backupStream As StreamWriter = backupProcess.StandardInput
                 Dim mystreamReader As StreamReader = backupProcess.StandardOutput
-                backupStream.WriteLine("mysqldump --user=root --password= -h localhost vms >""" + dbfile + """")
+                backupStream.WriteLine("mysqldump --user=root --password= -h localhost vms1 >""" + dbfile + """")
 
                 backupStream.Close()
                 backupProcess.WaitForExit()
@@ -809,7 +809,7 @@ Public Class setting
 
                 Dim backupStream As StreamWriter = backupProcess.StandardInput
                 Dim mystreamReader As StreamReader = backupProcess.StandardOutput
-                backupStream.WriteLine("mysql --user=root --password= -h localhost vms <""" + dbfile + """")
+                backupStream.WriteLine("mysql --user=root --password= -h localhost vms1 <""" + dbfile + """")
 
                 backupStream.Close()
                 backupProcess.WaitForExit()
@@ -825,45 +825,11 @@ Public Class setting
     End Sub
 
 
-    ''activation
-    Private Sub btnactivate_Click(sender As Object, e As EventArgs) Handles btnactivate.Click
-        encoding()
-    End Sub
-
-    Sub encoding()
-        Dim h1 As String = txtCurrentPass.Text
-        Dim h2 As String = "pR0dv<t Act!v@t3d"
-
-        Dim plaintext As String = h1 & "-" & h2
-        Dim pass As String = 1111
-
-        Dim wrapper As New Simple3Des(pass)
-        Dim ciphertext As String = wrapper.EncryptData(plaintext)
-
-        My.Computer.FileSystem.WriteAllText(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\ciphertext.txt", ciphertext, False)
-
-        If ciphertext = txtactivationcode.Text Then
-            MsgBox("Product Activated Successful")
-            My.Settings.pactivated = True
-            My.Settings.acticode = txtactivationcode.Text
-        Else
-            MsgBox("Activation code not valid")
-            txtactivationcode.Text = ""
-            Exit Sub
-        End If
-
-    End Sub
-
-
-
-
-
-
 
 
     'Private Sub btnreset_Click(sender As Object, e As EventArgs) Handles btnreset.Click
     '    Dim dialog As DialogResult
-    '    dialog = MessageBox.Show("This action will remove data including company name, activation code and will return to trial mode. Are you sure you want to reset the software?", "Reset To Default", MessageBoxButtons.YesNo)
+    '    dialog = MessageBox.Show("This action will remove data including company name and will return to empty software. Are you sure you want to reset the software?", "Reset To Default", MessageBoxButtons.YesNo)
     '    If dialog = Windows.Forms.DialogResult.No Then
     '        Exit Sub
     '    Else

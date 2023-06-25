@@ -183,7 +183,7 @@ Partial Class blacklist
         Me.Controls.Add(Me.Label1)
         Me.Name = "blacklist"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "blacklist"
+        Me.Text = "Blacklist"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

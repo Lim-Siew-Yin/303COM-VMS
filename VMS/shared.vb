@@ -31,8 +31,6 @@ Module formexit
         End If
         Try
             'check if visitor is blacklisted
-
-            'MsgBox(blic)
             Dim query2 = "SELECT * FROM `blacklist` WHERE LEFT(`visitor-id`, 4) = @blic"
             Dim command2 As New MySqlCommand(query2, conn)
             command2.Parameters.Add("@blic", MySqlDbType.VarChar).Value = ic

@@ -23,21 +23,15 @@ Partial Class setting
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(setting))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnrefresh = New System.Windows.Forms.Button()
         Me.btnbackg = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.tabproduct = New System.Windows.Forms.TabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnactivate = New System.Windows.Forms.Button()
-        Me.txtactivationcode = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.tabbackup = New System.Windows.Forms.TabPage()
         Me.btnrestore = New System.Windows.Forms.Button()
         Me.btnbackup = New System.Windows.Forms.Button()
@@ -114,7 +108,6 @@ Partial Class setting
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.tabproduct.SuspendLayout()
         Me.tabbackup.SuspendLayout()
         Me.tabuser.SuspendLayout()
         CType(Me.tblUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,79 +173,6 @@ Partial Class setting
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'tabproduct
-        '
-        Me.tabproduct.AutoScroll = True
-        Me.tabproduct.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.tabproduct.Controls.Add(Me.Label2)
-        Me.tabproduct.Controls.Add(Me.btnactivate)
-        Me.tabproduct.Controls.Add(Me.txtactivationcode)
-        Me.tabproduct.Controls.Add(Me.Label7)
-        Me.tabproduct.Controls.Add(Me.Label5)
-        Me.tabproduct.Location = New System.Drawing.Point(25, 4)
-        Me.tabproduct.Margin = New System.Windows.Forms.Padding(4)
-        Me.tabproduct.Name = "tabproduct"
-        Me.tabproduct.Padding = New System.Windows.Forms.Padding(4)
-        Me.tabproduct.Size = New System.Drawing.Size(1666, 905)
-        Me.tabproduct.TabIndex = 4
-        Me.tabproduct.Text = "Product Activation"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(236, 165)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(413, 17)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "* Please ensure that company name is entered in General page."
-        '
-        'btnactivate
-        '
-        Me.btnactivate.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnactivate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnactivate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnactivate.ForeColor = System.Drawing.Color.White
-        Me.btnactivate.Location = New System.Drawing.Point(735, 191)
-        Me.btnactivate.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnactivate.Name = "btnactivate"
-        Me.btnactivate.Size = New System.Drawing.Size(192, 38)
-        Me.btnactivate.TabIndex = 1
-        Me.btnactivate.Text = "Activate"
-        Me.btnactivate.UseVisualStyleBackColor = False
-        '
-        'txtactivationcode
-        '
-        Me.txtactivationcode.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtactivationcode.Location = New System.Drawing.Point(240, 130)
-        Me.txtactivationcode.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtactivationcode.Name = "txtactivationcode"
-        Me.txtactivationcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtactivationcode.Size = New System.Drawing.Size(685, 29)
-        Me.txtactivationcode.TabIndex = 0
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(48, 134)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(141, 24)
-        Me.Label7.TabIndex = 27
-        Me.Label7.Text = "Activation Code"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(43, 39)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(304, 46)
-        Me.Label5.TabIndex = 25
-        Me.Label5.Text = "Product Activation"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tabbackup
         '
@@ -615,14 +535,14 @@ Partial Class setting
         Me.tblUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblUser.Name = "tblUser"
         Me.tblUser.ReadOnly = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblUser.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblUser.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.tblUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblUser.RowTemplate.Height = 33
         Me.tblUser.Size = New System.Drawing.Size(571, 199)
@@ -637,7 +557,6 @@ Partial Class setting
         Me.tabsetting.Controls.Add(Me.tabunit)
         Me.tabsetting.Controls.Add(Me.tabuser)
         Me.tabsetting.Controls.Add(Me.tabbackup)
-        Me.tabsetting.Controls.Add(Me.tabproduct)
         Me.tabsetting.Location = New System.Drawing.Point(0, 47)
         Me.tabsetting.Margin = New System.Windows.Forms.Padding(4)
         Me.tabsetting.Multiline = True
@@ -701,14 +620,14 @@ Partial Class setting
         Me.tblEmergency.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblEmergency.Name = "tblEmergency"
         Me.tblEmergency.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblEmergency.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblEmergency.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.tblEmergency.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblEmergency.RowTemplate.Height = 33
         Me.tblEmergency.Size = New System.Drawing.Size(599, 229)
@@ -1011,14 +930,14 @@ Partial Class setting
         Me.tblHost.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tblHost.Name = "tblHost"
         Me.tblHost.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tblHost.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tblHost.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.tblHost.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.tblHost.RowTemplate.Height = 33
         Me.tblHost.Size = New System.Drawing.Size(667, 229)
@@ -1244,11 +1163,9 @@ Partial Class setting
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "setting"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Setting"
+        Me.Text = "Settings"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        Me.tabproduct.ResumeLayout(False)
-        Me.tabproduct.PerformLayout()
         Me.tabbackup.ResumeLayout(False)
         Me.tabbackup.PerformLayout()
         Me.tabuser.ResumeLayout(False)
@@ -1273,12 +1190,6 @@ Partial Class setting
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnrefresh As Button
-    Friend WithEvents tabproduct As TabPage
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnactivate As Button
-    Friend WithEvents txtactivationcode As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents tabbackup As TabPage
     Friend WithEvents btnrestore As Button
     Friend WithEvents btnbackup As Button

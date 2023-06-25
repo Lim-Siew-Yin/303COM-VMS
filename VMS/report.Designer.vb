@@ -82,9 +82,9 @@ Partial Class report
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(394, 111)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 20)
+        Me.Label3.Size = New System.Drawing.Size(105, 20)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "From Date :"
+        Me.Label3.Text = "*From Date :"
         '
         'txtdate1
         '
@@ -146,7 +146,6 @@ Partial Class report
         Me.btnexport.TabIndex = 8
         Me.btnexport.Text = "Export As Excel"
         Me.btnexport.UseVisualStyleBackColor = False
-        Me.btnexport.UseWaitCursor = True
         '
         'tblreport
         '
@@ -337,9 +336,9 @@ Partial Class report
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(672, 111)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(79, 20)
+        Me.Label9.Size = New System.Drawing.Size(85, 20)
         Me.Label9.TabIndex = 20
-        Me.Label9.Text = "To Date :"
+        Me.Label9.Text = "*To Date :"
         '
         'listfilter
         '

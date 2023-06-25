@@ -13,10 +13,12 @@ Public Class login
         Else
 
             Try
+                'check database connection
                 If Not opendb() Then
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
+                'search user data from table
                 Dim query1 = "SELECT * FROM user WHERE username = @username AND password = @password"
                 Dim command1 As New MySqlCommand(query1, conn)
                 command1.Parameters.Add("@username", MySqlDbType.VarChar).Value = txtusername.Text
@@ -51,6 +53,7 @@ Public Class login
                         homesecurity.Show()
                     End If
 
+                    'reset input field
                     txtusername.Text = ""
                     txtpass.Text = ""
                     txtusername.Select()

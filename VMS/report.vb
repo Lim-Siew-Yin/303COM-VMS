@@ -163,15 +163,14 @@ Public Class report
             Dim encryptIC As String = strEncrypt(fullic, ic)
             Dim encryptPassport As String = strEncrypt(txtpass.Text, pass)
 
+            'default table view
             Dim visitorAttribute As String = "`visitor_id` AS 'ID', `visitortype` AS 'VISITOR TYPE', `name` AS 'NAME', `ic` AS 'I/C', `passport` AS 'PASSPORT', `contact` AS 'CONTACT NO.', `email` AS 'EMAIL', `unit-no` AS 'UNIT', `host-id` AS 'HOST', `company` AS 'COMPANY', `vehicleno` AS 'VEHICLE NO.', `badge` AS 'BADGE NO.', `purpose` AS 'VISIT PURPOSE', `checkin` AS 'CHECK IN', `checkout` AS 'CHECK OUT', `forcecheckout` AS 'FORCE CHECK OUT', `forcereason` AS 'FORCE CHECK OUT REASON', `remark` AS 'REMARK'"
 
-            Dim blacklistAttribute As String = "`blacklist`.`requestDate` AS 'BLACKLIST REQUEST DATE', `blacklist`.`requestReason` AS 'BLACKLIST REASON', `blacklist`.`approved` AS 'BLACKLIST APPROVAL', `blacklist`.`approvedBy` AS ' BLACKLIST APPROVED BY', `blacklist`.`approvalDate` AS 'BLACKLIST APPROVAL DATE', `visitor`.`visitortype` AS 'VISITOR TYPE', `visitor`.`name` AS 'NAME', `visitor`.`ic` AS 'I/C', `visitor`.`passport` AS 'PASSPORT', `visitor`.`contact` AS 'CONTACT NO.', `visitor`.`email` AS 'EMAIL', `visitor`.`unit-n0` AS 'UNIT', `visitor`.`host-id` AS 'HOST', `visitor`.`company` AS 'COMPANY', `visitor`.`vehicleno` AS 'VEHICLE NO.', `visitor`.`badge` AS 'BADGE NO.', `visitor`.`purpose` AS 'VISIT PURPOSE', `visitor`.`checkin` AS 'CHECK IN', `visitor`.`checkout` AS 'CHECK OUT', `visitor`.`forcecheckout` AS 'FORCE CHECK OUT', `visitor`.`forcereason` AS 'FORCE CHECK OUT REASON', `visitor`.`remark` AS 'REMARK'"
+            Dim blacklistAttribute As String = "`blacklist`.`requestDate` AS 'BLACKLIST REQUEST DATE', `blacklist`.`requestReason` AS 'BLACKLIST REASON', `blacklist`.`approved` AS 'BLACKLIST APPROVAL', `blacklist`.`approvedBy` AS ' BLACKLIST APPROVED BY', `blacklist`.`approvalDate` AS 'BLACKLIST APPROVAL DATE', `visitor`.`visitortype` AS 'VISITOR TYPE', `visitor`.`name` AS 'NAME', `visitor`.`ic` AS 'I/C', `visitor`.`passport` AS 'PASSPORT', `visitor`.`contact` AS 'CONTACT NO.', `visitor`.`email` AS 'EMAIL', `visitor`.`unit-no` AS 'UNIT', `visitor`.`host-id` AS 'HOST', `visitor`.`company` AS 'COMPANY', `visitor`.`vehicleno` AS 'VEHICLE NO.', `visitor`.`badge` AS 'BADGE NO.', `visitor`.`purpose` AS 'VISIT PURPOSE', `visitor`.`checkin` AS 'CHECK IN', `visitor`.`checkout` AS 'CHECK OUT', `visitor`.`forcecheckout` AS 'FORCE CHECK OUT', `visitor`.`forcereason` AS 'FORCE CHECK OUT REASON', `visitor`.`remark` AS 'REMARK'"
 
             Dim query As String
             If txtic.MaskCompleted = False And cmbtype.Text = "" And txtpass.Text = "" Then
 
-                'MsgBox("Fields Empty")
-                'Exit Sub
                 'search by date
                 If cmbunit.SelectedIndex = 0 Then
                     'all unit
@@ -385,7 +384,6 @@ Public Class report
                     adapter.Fill(table)
                     tblreport.DataSource = table
 
-
                     'filter column display
                     filterTable()
 
@@ -396,7 +394,6 @@ Public Class report
                     Exit Sub
                 End If
 
-                'tblreport.AutoResizeColumns(DataGridViewAutoSizeColumnMode.AllCells)
                 reader.Close()
                 conn.Close()
 
@@ -410,10 +407,8 @@ Public Class report
     Function filterTable()
 
         Try
-
             'loop list to get checked item value
             'display column that header value = checked item value
-
             For Each column As DataGridViewColumn In tblreport.Columns
                 For Each item In listfilter.CheckedItems
 

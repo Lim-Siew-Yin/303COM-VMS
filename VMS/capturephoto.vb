@@ -73,8 +73,6 @@ Public Class capturephoto
             MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
 
-
-
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -86,24 +84,18 @@ Public Class capturephoto
 
                 Dim mstream As New System.IO.MemoryStream()
 
-                'SPECIFIES THE FILE FORMAT OF THE IMAGE
+                'specifies the file format of the image
                 piccapture.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
 
-                'RETURNS THE ARRAY OF UNSIGNED BYTES FROM WHICH THIS STREAM WAS CREATED
+                'returns the array of unsigned bytes from which this stream was created
                 arrImage = mstream.GetBuffer()
 
-                'GET THE SIZE OF THE STREAM IN BYTES
+                'get the size of the stream in bytes
                 Dim FileSize As UInt32
                 FileSize = mstream.Length
-                'CLOSES THE CURRENT STREAM AND RELEASE ANY RESOURCES ASSOCIATED WITH THE CURRENT STREAM
+                'closes the current stream and release any resources associated with the current stream
                 mstream.Close()
 
-
-
-
-                'Form1.picQR.Image = PictureBox1.Image
-                'Me.PictureBox1.Image.Save(IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, "IMGGG.jpg"))
-                'MessageBox.Show("Image is successfully saved.")
                 Touchless.CurrentCamera.Dispose()
 
 

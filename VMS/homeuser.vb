@@ -61,7 +61,7 @@
     End Sub
 
     Private Sub CheckConnectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckConnectionToolStripMenuItem.Click
-        If CheckDatabaseExists("vms") Then
+        If CheckDatabaseExists("vms1") Then
 
             If opendb() Then
                 MsgBox("CONNECTION SUCCESSFUL")
@@ -70,7 +70,7 @@
                 MsgBox("FAILED TO CONNECT TO DATABASE")
             End If
         Else
-            CreateDatabase("vms")
+            CreateDatabase("vms1")
             MsgBox("Database Created Successfully!")
 
             If opendb() Then

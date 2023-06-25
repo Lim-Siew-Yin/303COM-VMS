@@ -119,6 +119,7 @@ Partial Class successPre
         'btnsendqr
         '
         Me.btnsendqr.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnsendqr.Enabled = False
         Me.btnsendqr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsendqr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsendqr.ForeColor = System.Drawing.Color.White

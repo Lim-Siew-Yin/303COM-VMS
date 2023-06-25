@@ -219,7 +219,7 @@ Partial Class delcheckin
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "delcheckin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Vendor/Delivery"
+        Me.Text = "Vendor/Delivery Check In"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

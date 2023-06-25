@@ -56,12 +56,12 @@ Partial Class prelist
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(572, 69)
+        Me.Label1.Location = New System.Drawing.Point(410, 72)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(567, 69)
+        Me.Label1.Size = New System.Drawing.Size(772, 69)
         Me.Label1.TabIndex = 20
-        Me.Label1.Text = "REQUESTOR LIST"
+        Me.Label1.Text = "PRE-REGISTER ARRIVAL"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
@@ -193,7 +193,7 @@ Partial Class prelist
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "prelist"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Pre-register List"
+        Me.Text = "Pre-register Arrival List"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.tblprelist, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

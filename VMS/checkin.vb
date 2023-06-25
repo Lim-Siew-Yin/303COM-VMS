@@ -43,6 +43,7 @@ Public Class checkin
                     MsgBox("FAILED TO CONNECT TO DATABASE")
                 End If
 
+                'search visitor access record from db
                 Dim query1 = "SELECT * FROM `visitor` WHERE `ic` = @ic"
                 Dim command1 As New MySqlCommand(query1, conn)
                 command1.Parameters.Add("@ic", MySqlDbType.VarChar).Value = encryptIC
@@ -54,6 +55,7 @@ Public Class checkin
                 End While
 
                 If count > 0 Then
+                    'display constant value
                     txtname.Text = reader(2)
                     txtcontact.Text = reader(5)
                     txtemail.Text = reader(6)
@@ -242,7 +244,6 @@ Public Class checkin
                     Else
                         reader.Close()
                         Try
-
                             'open form2 to take picture
                             'validate if picture taken and form2 closed
                             If capturephoto.ShowDialog() = DialogResult.OK And arrImage IsNot Nothing And arrImage.Length > 0 Then
@@ -277,7 +278,7 @@ Public Class checkin
 
 
                             conn.Close()
-                                'Me.Close()
+                            'Me.Close()
                         Catch ex As Exception
                             MsgBox("CHECK IN ERROR: " & ex.Message)
                         End Try
