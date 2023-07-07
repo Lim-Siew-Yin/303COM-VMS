@@ -152,6 +152,7 @@ Public Class checkin
         End If
     End Sub
 
+
     Private Sub btncin_Click(sender As Object, e As EventArgs) Handles btncin.Click
 
         'check required field

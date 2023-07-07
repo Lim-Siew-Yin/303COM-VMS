@@ -1,12 +1,10 @@
-﻿'Imports WebCam_Capture
-'Imports MessagingToolkit.QRCode.Codec
+﻿
 Imports System.IO
 Public Class capturephoto
 
     'Webcam
     Public Touchless As New TouchlessLib.TouchlessMgr
-    'Public Camera() As TouchlessLib.Camera = Touchless.Cameras 'show error if no camera detected
-    'Public Camera1 As TouchlessLib.Camera = Touchless.Cameras.ElementAt(0)  'show error if no camera detected
+
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -96,7 +94,8 @@ Public Class capturephoto
                 'closes the current stream and release any resources associated with the current stream
                 mstream.Close()
 
-                Touchless.CurrentCamera.Dispose()
+                'close camera
+                Touchless.Dispose()
 
 
                 Me.DialogResult = DialogResult.OK
@@ -113,7 +112,8 @@ Public Class capturephoto
         Try
             'only dispose webcam if there's any
             If Touchless.Cameras.Count <> 0 Then
-                Touchless.CurrentCamera.Dispose()
+                Touchless.Dispose()
+
             End If
 
         Catch ex As Exception
